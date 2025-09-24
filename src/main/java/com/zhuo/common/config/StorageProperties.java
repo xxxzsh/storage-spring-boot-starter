@@ -1,5 +1,6 @@
 package com.zhuo.common.config;
 
+import com.zhuo.common.enums.StorageType;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
@@ -7,7 +8,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Data
 public class StorageProperties {
     // 类型
-    private String type;
+    private StorageType type;
     private AliyunOssProperties oss;
     private TencentCosProperties cos;
 //    private MinIOProperties minIOProperties;
@@ -21,7 +22,7 @@ public class StorageProperties {
     }
 
     @Data
-    public class TencentCosProperties {
+    public static class TencentCosProperties {
         private String secretId;
         private String secretKey;
         private String region;
