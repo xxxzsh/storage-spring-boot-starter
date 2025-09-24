@@ -1,8 +1,7 @@
 package com.zhuo.common.config;
 
 import com.zhuo.common.service.StorageService;
-import com.zhuo.common.service.impl.AliyunOssStrategy;
-import com.zhuo.common.service.impl.TencentCosService;
+import com.zhuo.common.service.tencent.TencentCosService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -29,9 +28,9 @@ public class StorageAutoConfiguration {
             case TENCENT:
             case COS:
                 return new TencentCosService(storageProperties.getCos());
-            case ALIYUN:
-            case OSS:
-                return new AliyunOssStrategy(storageProperties.getOss());
+//            case ALIYUN:
+//            case OSS:
+//                return new AliyunOssStrategy(storageProperties.getOss());
 //            case MINIO:
 //                return new MinioStorageService(storageProperties.getMinio());
             default:

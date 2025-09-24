@@ -1,13 +1,12 @@
-package com.zhuo.common.service.impl;
+package com.zhuo.common.service.tencent;
 
-import com.zhuo.common.config.StorageProperties;
 import com.zhuo.common.service.StorageService;
 
 public class TencentCosService implements StorageService {
 
-    private final StorageProperties.TencentCosProperties properties;
+    private final TencentCosProperties properties;
 
-    public TencentCosService(StorageProperties.TencentCosProperties properties) {
+    public TencentCosService(TencentCosProperties properties) {
         this.properties = properties;
     }
 
